@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:soccer_shoes/model/shoe_list.dart';
 import 'package:soccer_shoes/pages/detail_page.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -6,6 +7,8 @@ import 'package:hexcolor/hexcolor.dart';
 class ShoesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    timeDilation = 1.8;
+
     return Scaffold(
       body: GridView.builder(
         shrinkWrap: true,
@@ -28,12 +31,15 @@ class ShoesCard extends StatelessWidget {
                     children: <Widget>[
                       Expanded(
                         flex: 6,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            items.imageAsset,
-                            width: MediaQuery.of(context).size.width,
-                            fit: BoxFit.fitWidth,
+                        child: Hero(
+                          tag: "product",
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              items.imageAsset,
+                              width: MediaQuery.of(context).size.width,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
                         ),
                       ),

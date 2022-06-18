@@ -1,4 +1,3 @@
-// ignore: camel_case_types
 class ShoeData {
   String name;
   String brand;
@@ -24,7 +23,7 @@ class ShoeData {
 }
 
 var shoeDataList = [
-// nike
+  /// nike
   ShoeData(
     name: 'Nike Mercurial Vapor 14 Academy FG/MG',
     brand: 'Nike',
@@ -92,7 +91,8 @@ var shoeDataList = [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/60f058c9-451b-4c17-b6da-3d52b2899593/mercurial-vapor-13-academy-mds-tf-artificial-football-shoe-hMZgFP.png'
     ],
   ),
-// adidas
+
+  /// adidas
   ShoeData(
     name: 'Predator Freak.4 Flexible Ground Boots',
     brand: 'Adidas',
@@ -160,7 +160,8 @@ var shoeDataList = [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/5714e9a281b44f2a8966ac7500fc4596_9366/X_Ghosted.3_Firm_Ground_Boots_Pink_FW6945_04_standard.jpg'
     ],
   ),
-// puma
+
+  /// puma
   ShoeData(
     name: 'FUTURE Z 3.1 MG Mens Football Boots',
     brand: 'Puma',
@@ -228,7 +229,8 @@ var shoeDataList = [
       'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1500,h_1500/global/106299/01/fnd/EEA/fmt/png/ULTRA-1.2-FG/AG-Soccer-Cleats'
     ],
   ),
-// new balance
+
+  /// new balance
   ShoeData(
     name: 'Furon v6 Pro Night Heat FG',
     brand: 'New Balance',

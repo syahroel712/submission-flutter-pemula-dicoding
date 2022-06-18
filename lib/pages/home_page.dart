@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Heading
+              /// Heading
               Padding(
                 padding: EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Text(
@@ -62,7 +62,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Subhead
+
+              /// Subhead
               Padding(
                 padding: EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Text(
@@ -73,7 +74,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Search and Sort
+
+              /// Search and Sort
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Row(
@@ -145,7 +147,8 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              // Tabbar and TabbarView
+
+              /// Tabbar and TabbarView
               Expanded(
                 child: Container(
                   child: DefaultTabController(

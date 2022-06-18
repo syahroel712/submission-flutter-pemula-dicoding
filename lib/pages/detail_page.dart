@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
 import 'package:soccer_shoes/model/shoe_list.dart';
+import 'package:soccer_shoes/widgets/favorite_button.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class DetailPage extends StatelessWidget {
@@ -10,16 +12,21 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 1.5;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         bottom: false,
         child: Stack(
           children: <Widget>[
-            Image.asset(
-              shoe.imageAsset,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+            Hero(
+              tag: "product",
+              child: Image.asset(
+                shoe.imageAsset,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fill,
+              ),
             ),
             ListView(
               children: [
@@ -309,30 +316,6 @@ class DetailPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class FavoriteButton extends StatefulWidget {
-  @override
-  _FavoriteButtonState createState() => _FavoriteButtonState();
-}
-
-class _FavoriteButtonState extends State<FavoriteButton> {
-  bool isFavorite = false;
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: HexColor('#195A79'),
-      child: IconButton(
-        icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
-        color: HexColor('#FFD422'),
-        onPressed: () {
-          setState(() {
-            isFavorite = !isFavorite;
-          });
-        },
       ),
     );
   }
