@@ -275,6 +275,7 @@ class DetailPage extends StatelessWidget {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text('You pressed buy'),
+                                    duration: const Duration(seconds: 1),
                                   ),
                                 );
                               },

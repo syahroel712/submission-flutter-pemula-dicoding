@@ -10,14 +10,38 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Icon(
-          Icons.menu_rounded,
-          color: const Color(0xff111113),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu_rounded,
+                color: const Color(0xff111113),
+              ),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('You pressed menu'),
+                    duration: const Duration(seconds: 1),
+                  ),
+                );
+              },
+            );
+          },
         ),
         actions: <Widget>[
-          Icon(
-            Icons.account_circle_rounded,
-            color: const Color(0xff111113),
+          IconButton(
+            icon: const Icon(
+              Icons.account_circle_rounded,
+              color: const Color(0xff111113),
+            ),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('You pressed profile'),
+                  duration: const Duration(seconds: 1),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -106,7 +130,14 @@ class HomePage extends StatelessWidget {
                           child: IconButton(
                             icon: Icon(Icons.format_line_spacing_rounded),
                             color: HexColor('#FFD422'),
-                            onPressed: () {},
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('You pressed sort filter'),
+                                  duration: const Duration(seconds: 1),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
