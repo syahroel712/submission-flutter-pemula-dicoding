@@ -7,7 +7,7 @@ import 'package:hexcolor/hexcolor.dart';
 class ShoesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    timeDilation = 1.8;
+    timeDilation = 2.5;
 
     return Scaffold(
       body: GridView.builder(

@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 1.5;
+    timeDilation = 2.5;
 
     return Scaffold(
       backgroundColor: Colors.white,
