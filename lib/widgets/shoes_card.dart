@@ -7,7 +7,7 @@ import 'package:hexcolor/hexcolor.dart';
 class ShoesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    timeDilation = 2.5;
+    timeDilation = 3;
 
     return Scaffold(
       body: GridView.builder(
@@ -20,19 +20,19 @@ class ShoesCard extends StatelessWidget {
                 return DetailPage(shoe: items);
               }));
             },
-            child: Container(
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 6,
-                        child: Hero(
-                          tag: "product",
+            child: Hero(
+              tag: "product",
+              child: Container(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 6,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
@@ -42,51 +42,51 @@ class ShoesCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Expanded(
-                        child: Text(
-                          items.name,
-                          style: TextStyle(fontFamily: 'Poppins-Medium'),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                        SizedBox(
+                          height: 15,
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              '\$${items.price}',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Poppins-Regular',
+                        Expanded(
+                          child: Text(
+                            items.name,
+                            style: TextStyle(fontFamily: 'Poppins-Medium'),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                '\$${items.price}',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins-Regular',
+                                ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star_rounded,
-                                  color: HexColor('#FFD422'),
-                                ),
-                                Text(
-                                  '${items.rating}',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Poppins-Regular',
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star_rounded,
+                                    color: HexColor('#FFD422'),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Text(
+                                    '${items.rating}',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Poppins-Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
